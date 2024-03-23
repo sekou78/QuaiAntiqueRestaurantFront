@@ -7,7 +7,7 @@ html {
 }
 
 main {
-  margin-bottom: 150px;
+  margin-bottom: 250px;
 }
 
 footer.footer {
@@ -49,4 +49,8 @@ p {
     align-items: center;
     justify-content: center;
   }
+}
+
+.text-justify {
+  text-align: justify;
 }
