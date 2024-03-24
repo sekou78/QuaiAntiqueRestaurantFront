@@ -20,8 +20,9 @@ function validateForm() {
   const prenomOk = validateRequired(inputPreNom);
   const mailOk = validateMail(inputMail);
   const passwordOk = validatePassword(inputPassword);
+  const passwordConfirmOk = validateConfirmationPassword(inputPassword, inputValidationPassword);
 
-  if (nomOk && prenomOk && mailOk && passwordOk) {
+  if (nomOk && prenomOk && mailOk && passwordOk && passwordConfirmOk) {
     btnValidation.disabled = false;
   } else {
     btnValidation.disabled = true;
@@ -71,6 +72,19 @@ function validatePassword(input) {
   else {
     input.classList.remove("is-valid");
     input.classList.add("is-invalid");
+    return false;
+  }
+}
+//Function permettant de verifier le champ confirmez votre mot de passe du formulaire
+function validateConfirmationPassword(inputPwd, inputConfirmPwd) {
+  if (inputPwd.value == inputConfirmPwd.value) {
+    inputConfirmPwd.classList.add("is-valid");
+    inputConfirmPwd.classList.remove("is-invalid");
+    return true;
+  }
+  else {
+    inputConfirmPwd.classList.add("is-invalid");
+    inputConfirmPwd.classList.remove("is-valid");
     return false;
   }
 }

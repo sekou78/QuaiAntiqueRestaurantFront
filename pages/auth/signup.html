@@ -66,7 +66,7 @@
     </div>
     <div class="mb-3">
       <label for="ValidatePasswordInput" class="form-label"
-        >Validez votre mot de passe</label
+        >Confirmez votre mot de passe</label
       >
       <input
         type="password"
@@ -74,6 +74,12 @@
         id="ValidatePasswordInput"
         name="PasswordConfirm"
       />
+      <div class="invalid-feedback">
+        Ce mot de passe n'est pas confirmé.
+      </div>
+      <div class="valid-feedback">
+        Mot de passe confirmé.
+      </div>
     </div>
     <div class="text-center">
       <button
