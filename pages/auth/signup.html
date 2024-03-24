@@ -14,6 +14,9 @@
         placeholder="Votre nom"
         name="Nom"
       />
+      <div class="invalid-feedback">
+        Le nom est requis
+      </div>
     </div>
     <div class="mb-3">
       <label for="PrenomInput" class="form-label">Prenom</label>
@@ -24,6 +27,9 @@
         placeholder="Votre prénom"
         name="Prenom"
       />
+      <div class="invalid-feedback">
+        Le prenom est requis
+      </div>
     </div>
     <div class="mb-3">
       <label for="EmailInput" class="form-label">Email</label>
@@ -34,6 +40,12 @@
         placeholder="test@mail.fr"
         name="Email"
       />
+      <div class="invalid-feedback">
+        Le mail n'est pas au bon format
+      </div>
+      <div class="valid-feedback">
+        Le mail est au bon format
+      </div>
     </div>
     <div class="mb-3">
       <label for="PasswordInput" class="form-label">Mot de passe</label>
@@ -43,6 +55,14 @@
         id="PasswordInput"
         name="Password"
       />
+      <div class="invalid-feedback">
+        Le mot de passe n'est pas assez robuste : Au moins 8 caractères,
+        comprenant au moins 1 lettre majuscule, 1 lettre miniscule, 1 chiffre et
+        1 caractère speciale
+      </div>
+      <div class="valid-feedback">
+        Le mot de passe est robuste
+      </div>
     </div>
     <div class="mb-3">
       <label for="ValidatePasswordInput" class="form-label"
