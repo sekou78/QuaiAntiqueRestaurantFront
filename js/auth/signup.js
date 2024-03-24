@@ -5,18 +5,26 @@ const inputPreNom = document.getElementById("PrenomInput");
 const inputMail = document.getElementById("EmailInput");
 const inputPassword = document.getElementById("PasswordInput");
 const inputValidationPassword = document.getElementById("ValidatePasswordInput");
+const btnValidation = document.getElementById("btn-validation-inscription");
 
 inputNom.addEventListener("keyup", validateForm);
 inputPreNom.addEventListener("keyup", validateForm);
 inputMail.addEventListener("keyup", validateForm);
 inputPassword.addEventListener("keyup", validateForm);
 inputValidationPassword.addEventListener("keyup", validateForm);
+btnValidation.disabled = true;
 
 //Function permettant de valider tout le formulaire
 function validateForm() {
-  validateRequired(inputNom);
-  validateRequired(inputPreNom);
-  validateMail(inputMail);
+  const nomOk = validateRequired(inputNom);
+  const prenomOk = validateRequired(inputPreNom);
+  const mailOk = validateMail(inputMail);
+
+  if (nomOk && prenomOk && mailOk) {
+    btnValidation.disabled = false;
+  } else {
+    btnValidation.disabled = true;
+  }
 }
 //Function permettant de valider le champ Nom et Prenom formulaire
 function validateRequired(input) {
@@ -24,11 +32,13 @@ function validateRequired(input) {
     //c'est ok
     input.classList.add("is-valid");
     input.classList.remove("is-invalid");
+    return true;
   }
   else {
     //c'est pas ok
     input.classList.remove("is-valid");
     input.classList.add("is-invalid");
+    return false;
   }
 }
 //Function permettant de valider le champ email du formulaire
