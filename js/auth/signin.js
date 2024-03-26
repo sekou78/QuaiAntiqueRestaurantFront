@@ -13,11 +13,11 @@ function checkCredentials() {
     setToken(token);
 
     //placer ce token en cookie
-    setCookie(RoleCookieName, "admin", 7);
-    window.location.replace("/");
+    // setCookie(RoleCookieName, "admin", 7);
+    // window.location.replace("/");
 
-    //   setCookie(RoleCookieName, "client", 7);
-    //   window.location.replace("/");
+    setCookie(RoleCookieName, "client", 7);
+    window.location.replace("/");
 
     //   setCookie(RoleCookieName, "visiteur", 7);
     //   window.location.replace("/");
