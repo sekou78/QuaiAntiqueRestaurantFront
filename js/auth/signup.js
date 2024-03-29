@@ -136,7 +136,19 @@ let requestOptions = {
 // };
 
 fetch("http://127.0.0.1:8000/api/registration", requestOptions)
-  .then((response) => response.json())
-  .then((result) => console.log(result))
+  // .then((response) => response.json())
+  .then(response => {
+    // debugger;
+    if(response.ok) {
+      return response.json();
+    } else {
+      alert("Erreur de l'inscription");
+    }
+  })
+  // .then((result) => console.log(result))
+  .then(result => {
+    alert("Bravo "+dataForm.get("prenom")+" vous êtes maintenant inscrit, vous pouvez vous connectez.")
+    document.location.href="/signin";
+  })
   .catch((error) => console.log('error', error));
 }
