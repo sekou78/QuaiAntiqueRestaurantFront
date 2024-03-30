@@ -46,7 +46,7 @@ function checkCredentials() {
     })
     .catch(error => console.log('error', error));
 
-
+/*
   // if (mailInput.value == "test@mail.com" && passwordInput.value == "123") {
   //   //Il faudra récupérer le vrai token
   //   const token = "lkjsdngfljsqdnglkjsdbglkjqskjgkfjgbqslkfdgbskldfgdfgsdgf";
@@ -66,4 +66,5 @@ function checkCredentials() {
   //   mailInput.classList.add("is-invalid");
   //   passwordInput.classList.add("is-invalid");
   // }
+*/
 }

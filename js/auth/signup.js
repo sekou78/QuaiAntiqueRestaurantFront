@@ -1,5 +1,4 @@
 //Implémenter le JS de ma page
-
 const inputNom = document.getElementById("NomInput");
 const inputPreNom = document.getElementById("PrenomInput");
 const inputMail = document.getElementById("EmailInput");
@@ -117,7 +116,7 @@ let requestOptions = {
     // Redirection à suivre en cas de besoin ("follow" suit automatiquement les redirections)
     redirect: 'follow'
 };
-
+/*
 //   const myHeaders = new Headers();
 // myHeaders.append("Content-Type", "application/json");
 
@@ -134,7 +133,7 @@ let requestOptions = {
 //   body: raw,
 //   redirect: "follow"
 // };
-
+*/
 // fetch("http://127.0.0.1:8000/api/registration", requestOptions)
 fetch(apiUrl+"registration", requestOptions)
   // .then((response) => response.json())
@@ -148,7 +147,7 @@ fetch(apiUrl+"registration", requestOptions)
   })
   // .then((result) => console.log(result))
   .then(result => {
-    alert("Bravo "+dataForm.get("prenom")+" vous êtes maintenant inscrit, vous pouvez vous connectez.")
+    alert("Bravo "+dataForm.get("nom")+" vous êtes maintenant inscrit, vous pouvez vous connectez.")
     document.location.href="/signin";
   })
   .catch((error) => console.log('error', error));
