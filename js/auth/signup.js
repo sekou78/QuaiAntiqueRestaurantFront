@@ -138,7 +138,7 @@ let requestOptions = {
 fetch(apiUrl+"registration", requestOptions)
   // .then((response) => response.json())
   .then(response => {
-    // debugger;
+    /*// debugger;*/
     if(response.ok) {
       return response.json();
     } else {

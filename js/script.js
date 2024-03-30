@@ -4,6 +4,7 @@ const RoleCookieName = "role";
 const apiUrl = "http://127.0.0.1:8000/api/";
 
 signoutBtn.addEventListener("click", signout);
+/*// getInfosUser();*/
 
 function setToken(token) {
   setCookie(tokenCookieName, token, 7);
@@ -116,4 +117,35 @@ function sanitizeHtml(text){
     // Utilisez .innerHTML pour récupérer le contenu de "tempHtml"
     // Cela va "neutraliser" ou "échapper" tout code HTML potentiellement malveillant
     return tempHtml.innerHTML;
+}
+
+
+function getInfosUser(){
+  /*// console.log("Recuperation des informations de l'utilisateur...");*/
+  let myHeaders = new Headers();
+
+  myHeaders.append("X-AUTH-TOKEN", getToken());
+
+  let requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+      redirect: 'follow'
+  };
+
+  fetch(apiUrl+"account/me", requestOptions)
+  .then(response =>{
+      if(response.ok){
+          return response.json();
+      }
+      else{
+          console.log("Impossible de récupérer les informations utilisateur");
+      }
+  })
+  .then(result => {
+    /*// console.log(result);*/
+      return result;
+  })
+  .catch(error =>{
+      console.error("erreur lors de la récupération des données utilisateur", error);
+  });
 }
